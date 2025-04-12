@@ -40,6 +40,17 @@ Protocol Overview
 
 The BWT901 sensor communicates over a serial interface using a proprietary protocol. Each data frame is 11 bytes long and starts with a 0x55 header byte, followed by a frame type identifier, sensor data, temperature data, and a checksum.
 
+When starting the communication with the controller make sure to set the protocol to normal
+[[0xFF, 0xAA, 0x03, 0x00]]
+
++ 0x03 → protocol register
++ proprietary binary protocol
++ Other values (e.g., 0x01, 0x05) might indicate Modbus, CAN, havent figured this out yet
+
+0x50 = frame ID for time-related data.
+0x03 = register for protocol selection.
+0x00 = proprietary protocol.
+
 Frame types include:
 	+ 0x51: Acceleration
 	+ 0x52: Gyroscope
