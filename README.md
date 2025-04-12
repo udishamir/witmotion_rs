@@ -1,4 +1,5 @@
 # Witmotion BWT901CL Rust Port
+![image](https://github.com/user-attachments/assets/be35a3f6-ab0a-4ab0-b2b1-864fe644e2b6)
 
 A native Rust library for interfacing with the Witmotion BWT901CL IMU sensor using its proprietary serial protocol.
 
@@ -41,7 +42,7 @@ Protocol Overview
 The BWT901 sensor communicates over a serial interface using a proprietary protocol. Each data frame is 11 bytes long and starts with a 0x55 header byte, followed by a frame type identifier, sensor data, temperature data, and a checksum.
 
 When starting the communication with the controller make sure to set the protocol to normal
-[[0xFF, 0xAA, 0x03, 0x00]]
+[0xFF, 0xAA, 0x03, 0x00]
 
 + 0x03 → protocol register
 + proprietary binary protocol
